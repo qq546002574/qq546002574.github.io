@@ -1,23 +1,4 @@
 
-<p align="center">
-  <a href="https://hushuaiace.fun/qq546002574.github.io/#/">
-    <img src="./static/logo.png" width="152">
-  </a>
-  <h3 align="center">qq546002574.github.io</h3>
-  <p align="center">
-    <a href="https://gitter.im/qq546002574.github.io/Lobby"> <img src="https://badges.gitter.im/qq546002574.github.io/Lobby.svg"></a>
-    <a href="https://github.com/qq546002574/qq546002574.github.io/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Anti%20996-blue.svg"></a>
-    <a href="https://juejin.im/post/5aab4f985188255582521c57"><img src="https://img.shields.io/badge/%E6%8E%98%E9%87%91-1.2k%20likes-brightgreen.svg"></a>
-    <a href="https://codeclimate.com/github/qq546002574/qq546002574.github.io/maintainability"><img src="https://api.codeclimate.com/v1/badges/dfba02247f296387a1a7/maintainability" /></a>
-    <a href="http://hits.dwyl.io/qq546002574/qq546002574.github.io" alt="hit count"><img src="http://hits.dwyl.io/qq546002574/qq546002574.github.io.svg" /></a> 
-    <a href="https://github.com/qq546002574/qq546002574.github.io"><img src="https://img.shields.io/github/stars/qq546002574/qq546002574.github.io.svg?style=social"></a>
-  </p>
-  <p align="center">
-    CSS tricks web developers need to know<br>
-  </p>
-</p>
-
-
 ## View online
 
 🌏 [qq546002574.github.io](https://hushuaiace.fun/qq546002574.github.io/#/)
@@ -51,52 +32,3 @@ Several quick start options are available:
 |[![圣杯布局](https://img.shields.io/badge/holy%20grail%20layout-%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/holy-grail-layout) | [![双飞翼布局](https://img.shields.io/badge/double%20wing%20layout-%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/double-wing-layout) | [![类订单布局](https://img.shields.io/badge/class%20order%20layout-%E7%B1%BB%E8%AE%A2%E5%8D%95%E5%B8%83%E5%B1%80-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/class-order-layout) |
 |[![Flex 布局](https://img.shields.io/badge/flexbox%20layout-Flex%E5%B8%83%E5%B1%80-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/flexbox-layout) | [![1px 线/边](https://img.shields.io/badge/one%20pixel%20line-1px%20%E7%BA%BF%2F%E8%BE%B9-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/one-pixel-line) | [![弹跳效果](https://img.shields.io/badge/bounce-%E5%BC%B9%E8%B7%B3%E6%95%88%E6%9E%9C-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/bounce) |
 |[![插入换行](https://img.shields.io/badge/line%20breaks-%E6%8F%92%E5%85%A5%E6%8D%A2%E8%A1%8C-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/line-breaks) | [![自定义变量](https://img.shields.io/badge/custom%20variables-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/custom-variables) | [![有趣的项目](https://img.shields.io/badge/interesting-%E6%9C%89%E8%B6%A3%E7%9A%84%E9%A1%B9%E7%9B%AE-b4a078.svg)](https://hushuaiace.fun/qq546002574.github.io/#/interesting-usage) |
-
-
-## Contributing ![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true&style=flat-square)
-
-- :fork_and_knife:Fork it!
-- :twisted_rightwards_arrows:Create your branch: `git checkout -b new-branch`
-- :wrench:Make your changes
-- :memo:Commit your changes: `git commit -am 'Add some feature'`
-- :rocket:Push to the branch: `git push origin new-branch`
-- :tada:Submit a pull request
-
-or submit an [issue](https://github.com/qq546002574/qq546002574.github.io/issues) - any helpful suggestions are welcomed. :stuck_out_tongue_winking_eye:
-
-------
-
-This project exists thanks to all the people who contribute. 
-<a href="https://github.com/qq546002574/qq546002574.github.io/graphs/contributors"><img src="https://opencollective.com/qq546002574.github.io/contributors.svg?width=890&button=false" /></a>
-
-## Donate ![donate](https://img.shields.io/badge/%E2%98%95-Buy%20Me%20A%20Coffee-%23be4141.svg?style=flat-square&colorB=00A862)
-
-If you find this project useful, you can buy me a coffee ☕, Thank you! 🙏🏻 🙏 🙏🏿
-
-<img src="./static/reward-code.png" width="280"> <br><br>
-
-If you provide your github in the message, it will show up here with a link to your github.
-
-<a href="https://github.com/fqs617" target="_blank"><img src="https://avatars3.githubusercontent.com/u/23302051?s=460&v=4" width="29" style="border-radius: 50%"></a>
-<a href="https://github.com/ElivesHuangGit" target="_blank"><img src="https://avatars0.githubusercontent.com/u/36831410?s=460&v=4" width="29" style="border-radius: 50%"></a>
-<a href="https://github.com/StaminaWang" target="_blank"><img src="https://avatars1.githubusercontent.com/u/19159159?s=460&v=4" width="29" style="border-radius: 50%"></a>
-
-## Backers
-
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/qq546002574.github.io#backer)]
-
-<a href="https://opencollective.com/qq546002574.github.io#backers" target="_blank"><img src="https://opencollective.com/qq546002574.github.io/backers.svg?width=890"></a>
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/qq546002574.github.io#sponsor)]
-
-<a href="https://opencollective.com/qq546002574.github.io/sponsor/0/website" target="_blank"><img src="https://opencollective.com/qq546002574.github.io/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/qq546002574.github.io/sponsor/1/website" target="_blank"><img src="https://opencollective.com/qq546002574.github.io/sponsor/1/avatar.svg"></a>
-
-
-## license
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fqq546002574%2Fqq546002574.github.io.svg?type=small)](https://app.fossa.io/projects/git%2Bgithub.com%2Fqq546002574%2Fqq546002574.github.io?ref=badge_small)
-
-[996ICU](https://github.com/qq546002574/qq546002574.github.io/blob/master/LICENSE) © 2017-present, LHammer
