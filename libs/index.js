@@ -11,6 +11,7 @@ gitalkConfig = {
   language: "en",
   labels: ["💬Gitalk"],
   pagerDirection: "last",
+  id: location.pathname,
   distractionFreeMode: false
 };
 window.$docsify = {
