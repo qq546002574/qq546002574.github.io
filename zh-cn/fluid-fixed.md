@@ -41,7 +41,7 @@
       <p>A paragraph of filler text. La la la de dah de dah de dah de la.A paragraph of filler text. La la la de dah de dah de dah de la.A paragraph of filler text. La la la de dah de dah de dah de la.A paragraph of filler text. La la la de dah de dah de dah de la.A paragraph of filler text. La la la de dah de dah de dah de la.A paragraph of filler text. La la la de dah de dah de dah de la.</p>
     </section>
     <footer>
-      <p>&copy; 2018 LHammer</p>
+      <p>&copy; 2018 qq546002574</p>
       <p>CSS Tricks need to know for web developer.</p>
     </footer>
   </main>

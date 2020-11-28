@@ -34,10 +34,10 @@
 <template>
   <main class="main">
     <span class="key">👦🏿Name:</span>
-    <span class="bold">LHammer</span>
+    <span class="bold">qq546002574</span>
     <span class="key br">👨🏼‍💻GitHub:</span>
     <span class="bold">https://github.com/qq546002574</span>
-    <span class="bold">https://gitee.com/lhammer</span>
+    <span class="bold">https://gitee.com/qq546002574</span>
     <span class="key br">🌎掘金:</span>
     <span class="bold">https://juejin.im/user/57a3dbb2d342d300574d8369</span>
   </main>

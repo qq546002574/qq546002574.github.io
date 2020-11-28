@@ -87,7 +87,7 @@
     <input type="checkbox" id="awesome11">
     <label for="awesome11">Iconfont</label>
     <input type="checkbox" id="awesome12">
-    <label for="awesome12">Lhammer</label>
+    <label for="awesome12">qq546002574</label>
     <input type="checkbox" id="awesome2" disabled>
     <label for="awesome2">禁用</label>
     <input type="checkbox" id="awesome3" disabled class="checked">

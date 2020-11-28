@@ -53,7 +53,7 @@ The so-called `Sticky Footer` refers to a web page effect. If the page content i
       <p>Amet volutpat consequat mauris nunc congue. Porttitor lacus luctus accumsan tortor posuere ac. Netus et malesuada fames ac turpis egestas integer eget. Ligula ullamcorper malesuada proin libero nunc. Egestas purus viverra accumsan in nisl nisi. Elementum sagittis vitae et leo duis ut diam quam. Dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu. Purus faucibus ornare suspendisse sed nisi lacus sed viverra. Massa tincidunt nunc pulvinar sapien et. Consequat semper viverra nam libero justo laoreet sit amet cursus. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim.</p>
     </section>
     <footer>
-      <p>© 2018 LHammer</p>
+      <p>© 2018 qq546002574</p>
       <p>CSS Tricks need to know for web developer.</p>
     </footer>
   </main>
@@ -107,7 +107,7 @@ The so-called `Sticky Footer` refers to a web page effect. If the page content i
       <p>Vulputate dignissim suspendisse in est ante in nibh mauris cursus. Posuere ac ut consequat semper viverra nam libero justo. Nibh tortor id aliquet lectus proin nibh nisl condimentum. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. In dictum non consectetur a erat nam.</p>
     </section>
     <footer>
-      <p>© 2018 LHammer</p>
+      <p>© 2018 qq546002574</p>
       <p>CSS Tricks need to know for web developer.</p>
     </footer>
   </main>
