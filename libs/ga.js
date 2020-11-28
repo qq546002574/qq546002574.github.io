@@ -23,7 +23,7 @@
       init($docsify.ga);
     }
 
-    window.ga('set', 'page');
+    window.ga('set', 'page', location.hash);
     window.ga('send', 'pageview');
   }
 
