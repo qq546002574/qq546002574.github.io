@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	</head>
+	<body>
+		<div class="app">
+			<img src="img/xiaolan.png"/>
+		</div>
+	</body>
+	<script>
+		// 加监控防删除破解
+		// 观察器的配置（需要观察什么变动）
+		const config = { attributes: true, childList: true, subtree: true };
+		// 当观察到变动时执行的回调函数
+		const callback = function (mutationsList, observer) {
+		// Use traditional 'for loops' for IE 11
+		  for (let mutation of mutationsList) {
+			mutation.removedNodes.forEach(function (item) {
+				document.body.appendChild(item);
+			});
+		  }
+		};
+		// 监听元素
+		const targetNode = document.body;
+		// 创建一个观察器实例并传入回调函数
+		const observer = new MutationObserver(callback);
+		// 以上述配置开始观察目标节点
+		observer.observe(targetNode, config);
+		
+		function createWaterMark() {
+		  const angle = -20;
+		  const txt = '帅帅真帅'
+		  const canvas = document.createElement('canvas');
+		  canvas.width = 180;
+		  canvas.height = 100;
+		  const ctx = canvas.getContext('2d');
+		  ctx.clearRect(0, 0, 180, 100);
+		  ctx.fillStyle = '#000';
+		  ctx.globalAlpha = 0.3;
+		  ctx.font = `16px serif`
+		  ctx.rotate(Math.PI / 180 * angle);
+		  ctx.fillText(txt, 0, 50);
+		  return canvas.toDataURL();
+		}
+		const watermakr = document.createElement('div');
+		watermakr.className = 'watermark';
+		watermakr.style.height = '2000px';
+		watermakr.style.width = '100%';
+		watermakr.style.position = 'absolute';
+		watermakr.style.top = '0';
+		watermakr.style.backgroundImage = `url(${createWaterMark()})`
+		document.body.appendChild(watermakr);
+
+		
+
+	</script>
+</html>
+<style type="css">
+.watermark {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    pointer-events: none;
+    background-repeat: repeat;
+}
+</style>
