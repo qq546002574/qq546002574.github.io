@@ -24,7 +24,7 @@
     		  originalData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
     		  console.log(originalData) // 256*256*4 大小的数组 这里每个像素是32位 #ffffff,1
     		  mergeData(ctx, textData, 'R', originalData)  // 加密
-    	      processData(ctx, originalData) // 解密
+    	    //   processData(ctx, originalData) // 解密
     		};
 			// 加密
             var mergeData = function(ctx, newData, color, orgData){
@@ -52,14 +52,15 @@
     					// 只处理目标通道
     					if(newData[i + offset] === 0 && (oData[i] % 2 === 1)){ // 同一位置oData[i] % 2 === 1奇数判断
     						// 没有信息的像素，该通道最低位置0，但不要越界
-    						if(oData[i] === 255){// 转偶
-    							oData[i]--;
-    						} else {
-    							oData[i]++;
-    						}
+    						// if(oData[i] === 255){// 转偶
+    						// 	oData[i]--;
+    						// } else {
+    						// 	oData[i]++;
+    						// }
     					} else if (newData[i + offset] !== 0 && (oData[i] % 2 === 0)){
     						// 有信息的像素，该通道最低位置1，可以想想上面的斑点效果是怎么实现的
-    						oData[i]++;
+							oData[i] = 0;
+    						// oData[i]++;
     					}
     				}
     			}
