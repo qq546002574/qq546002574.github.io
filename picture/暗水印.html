@@ -26,31 +26,9 @@
     		  //mergeData(ctx, textData, 'R', originalData)  // 加密
     	   //   processData(ctx, originalData) // 解密
     		};
-    		
-    		var processData = function (ctx, originalData) {
-    			var data = originalData.data;
-    			for (var i = 0; i < data.length; i++) {
-    				if (i % 4 == 0) {
-    					// R分量
-    					if (data[i] % 2 == 0) {
-    						data[i] = 0;
-    					} else {
-    						data[i] = 255;
-    					}
-    				} else if (i % 4 == 3) {
-    					// alpha通道不做处理
-    					continue;
-    				} else {
-    					// 关闭其他分量，不关闭也不影响答案
-    					data[i] = 0;
-    				}
-    			}
-    			// 将结果绘制到画布
-    			ctx.putImageData(originalData, 0, 0);
-    		}
-    
-            var mergeData = function(ctx, newData, color, originalData){
-    			var oData = originalData.data;
+			// 加密
+            var mergeData = function(ctx, newData, color, orgData){
+    			var oData = orgData.data;
     			var bit, offset;  // offset的作用是找到alpha通道值，这里需要大家自己动动脑筋?
     			switch(color){
     				case 'R':
@@ -81,15 +59,33 @@
     						}
     					} else if (newData[i + offset] !== 0 && (oData[i] % 2 === 0)){
     						// 有信息的像素，该通道最低位置1，可以想想上面的斑点效果是怎么实现的
-    						if(oData[i] === 255){
-    							oData[i]--;
-    						} else {
-    							oData[i]++;
-    						}
+    						oData[i]++;
     					}
     				}
     			}
-    			ctx.putImageData(originalData, 0, 0);
+    			ctx.putImageData(orgData, 0, 0);
+    		}
+    		// 解密
+    		var processData = function (ctx, orgData) {
+    			var data = orgData.data;
+    			for (var i = 0; i < data.length; i++) {
+    				if (i % 4 == 0) {
+    					// R分量
+    					if (data[i] % 2 == 0) {
+    						data[i] = 0;
+    					} else {
+    						data[i] = 255;
+    					}
+    				} else if (i % 4 == 3) {
+    					// alpha通道不做处理
+    					continue;
+    				} else {
+    					// 关闭其他分量，不关闭也不影响答案
+    					data[i] = 0;
+    				}
+    			}
+    			// 将结果绘制到画布
+    			ctx.putImageData(orgData, 0, 0);
     		}
     	</script>
 	</body>
