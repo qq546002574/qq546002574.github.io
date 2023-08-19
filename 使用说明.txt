@@ -1,14 +1,14 @@
-1.Æô¶¯Chrome£¬ÊäÈëchrome://flags/#autoplay-policy,
-µÚÒ»¸öÑ¡ÏîAutoplay policyÉèÖÃÎªno user gesture is required,È»ºó¹Ø±ÕChrome
+1.å¯åŠ¨Chromeï¼Œè¾“å…¥chrome://flags/#autoplay-policy,
+ç¬¬ä¸€ä¸ªé€‰é¡¹Autoplay policyè®¾ç½®ä¸ºno user gesture is required,ç„¶åå…³é—­Chrome
 
-2.µã»÷to.htmlÆô¶¯
+2.ç‚¹å‡»to.htmlå¯åŠ¨
 
-3.ÕËºÅ£º123  ÃÜÂë£º123  ¿ÉÒÔÔÚjquery-1.8.3.min.jsÀïĞŞ¸Ä
+3.è´¦å·ï¼šguoping  å¯†ç ï¼š717  å¯ä»¥åœ¨jquery-1.8.3.min.jsé‡Œä¿®æ”¹
 
-4.indexl.jsÊÇµÚ¶şÒ³index Hi XXXµÄjs£¬¿ÉÒÔÔÚÀïÃæĞŞ¸ÄÎÄ×Ö
+4.indexl.jsæ˜¯ç¬¬äºŒé¡µindex Hi XXXçš„jsï¼Œå¯ä»¥åœ¨é‡Œé¢ä¿®æ”¹æ–‡å­—
 
-5.img.jsÀïÃæÒ²ÓĞÊä³öÎÄ×Ö£¬shadowÒ³
+5.img.jsé‡Œé¢ä¹Ÿæœ‰è¾“å‡ºæ–‡å­—ï¼Œshadowé¡µ
 
-6.ËÄÊ×ÒôÀÖ£¬·Ö±ğ¶ÔÓ¦1 BirthdayCake¡¢2 Say¡¢3 index¡¢4 Shadow
+6.å››é¦–éŸ³ä¹ï¼Œåˆ†åˆ«å¯¹åº”1 BirthdayCakeã€2 Sayã€3 indexã€4 Shadow
 
-7.ÌıËµÄãÏ²»¶ÂÒÉ¾¶«Î÷£¬¼ÇµÃ±¸·İ
+7.å¬è¯´ä½ å–œæ¬¢ä¹±åˆ ä¸œè¥¿ï¼Œè®°å¾—å¤‡ä»½

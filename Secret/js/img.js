@@ -13,7 +13,7 @@ $(function () {
                 i++;
             }, 4000);
         } else {
-			$('.begin').text("很简单，嘻嘻");
+			$('.begin').html("<p>看完点这里<a href='last.html' title='Shadow'>嘻嘻</a></p>");
 			$('.begin').fadeIn();
             return;
         }
@@ -30,7 +30,7 @@ $(function () {
         li.eq(i).css('z-index',i)
         var n= Math.floor((Math.random() * 30)+(-30));
         li.eq(i).css({transform:"rotate("+n+"deg)"})
-        li.eq(i).find('img').css({width:'250px',height:'350px'})
+        li.eq(i).find('img').css({width:'250px'})
         li.eq(i).show();
         if (parseInt(li.eq(i).css('top'))<0){
             data.top=parseInt(Math.random() * 20 +5)+"%";
