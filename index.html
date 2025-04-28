@@ -1,1 +1,223 @@
-<!doctype html><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="format-detection" content="telephone=no,address=no"><meta name="apple-mobile-web-app-status-bar-style" content="white"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>majiangjishiqi</title><script>!function(n){function f(){var e=n.document.documentElement,w=e.getBoundingClientRect().width,x=40*w/750;e.style.fontSize=x>=40?"40px":x<=20?"20px":x+"px"}n.addEventListener("resize",(function(){f()})),f()}(window);</script><script defer="defer" src="/js/427.46aaff6f.js"></script><script defer="defer" src="/js/app.46aaff6f.js"></script><link href="/css/app.46aaff6f5d37d81b3f73.css" rel="stylesheet"></head><body><div id="app"></div></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单数据获取与提交</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #log {
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            margin-top: 20px;
+        }
+        .log-entry {
+            margin-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        .info {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>订单数据获取与提交</h1>
+    
+    <div class="container">
+        <h2>操作面板</h2>
+        <button id="startBtn">开始获取订单数据</button>
+        <button id="stopBtn" disabled>停止获取</button>
+    </div>
+    
+    <div class="container">
+        <h2>日志输出</h2>
+        <div id="log"></div>
+    </div>
+    
+    <script>
+        // 全局变量
+        let isRunning = false;
+        let authToken = "Bearer 86dd3b1fd2a9d72450ee32d4cf44298b|1743596072";
+        
+        // DOM元素
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const logContainer = document.getElementById('log');
+        
+        // 日志函数
+        function log(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logContainer.appendChild(entry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        // 获取订单数据
+        async function getOrderData() {
+            if (!isRunning) return;
+            
+            try {
+                // GET请求获取数据
+                log("正在发送GET请求获取数据...");
+                const getUrl = "https://tmp.wfq2020.com/wangyi-captcha/api/pdd/render";
+                const getResponse = await fetch(getUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': authToken
+                    }
+                });
+                
+                if (!getResponse.ok) {
+                    throw new Error(`HTTP错误: ${getResponse.status}`);
+                }
+                
+                const responseData = await getResponse.json();
+                log("GET响应数据: " + JSON.stringify(responseData).substring(0, 100) + "...");
+                
+                // 检查响应code是否为200
+                if (responseData.code === 200) {
+                    log("响应code为200，5秒后重新执行请求...", "info");
+                    setTimeout(getOrderData, 5000);
+                    return;
+                }
+                
+                // 获取data字段中的数组
+                if (responseData.data) {
+                    const data = responseData.data;
+                    
+                    // 判断data是否为空数组
+                    if (Array.isArray(data) && data.length === 0) {
+                        log("data为空数组，10秒后重新执行请求...", "info");
+                        setTimeout(getOrderData, 10000);
+                        return;
+                    }
+                    
+                    // 判断是否存在数组
+                    if (Array.isArray(data) && data.length > 0) {
+                        // 提取mall_id集合
+                        const mallIds = data
+                            .filter(item => item.mall_id)
+                            .map(item => item.mall_id);
+                        
+                        // 判断mall_ids的长度是否大于0
+                        if (mallIds.length > 0) {
+                            // 准备POST请求数据
+                            const postData = {
+                                "phone": "13467387980",
+                                "data_list": mallIds,
+                                "order_version": "2025-04-25",
+                                "code": null
+                            };
+                            
+                            // 发送POST请求
+                            log("正在发送POST请求提交数据...");
+                            const postUrl = "https://tmp.wfq2020.com/wangyi-captcha/api/pdd/submit";
+                            const postResponse = await fetch(postUrl, {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': authToken,
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(postData)
+                            });
+                            
+                            if (!postResponse.ok) {
+                                throw new Error(`HTTP错误: ${postResponse.status}`);
+                            }
+                            
+                            const postResult = await postResponse.json();
+                            log("POST响应数据: " + JSON.stringify(postResult), "success");
+                            
+                            // 检查响应状态码
+                            if (postResult.code === 400) {
+                                log("响应状态码为400，停止程序", "error");
+                                stopProcess();
+                                return;
+                            }
+                            
+                            // 1秒后重新执行请求
+                            log("1秒后重新执行请求...");
+                            setTimeout(getOrderData, 1000);
+                            return;
+                        } else {
+                            log("数据中没有找到mall_id字段", "error");
+                        }
+                    } else {
+                        log("GET响应不是数组或数组为空", "error");
+                    }
+                } else {
+                    log("GET响应没有data字段", "error");
+                }
+            } catch (error) {
+                log(`发生错误: ${error.message}`, "error");
+            }
+            
+            // 如果执行到这里，说明出现了错误，5秒后重试
+            if (isRunning) {
+                log("5秒后重试...");
+                setTimeout(getOrderData, 5000);
+            }
+        }
+        
+        // 开始处理
+        function startProcess() {
+            isRunning = true;
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            log("开始获取订单数据...", "success");
+            getOrderData();
+        }
+        
+        // 停止处理
+        function stopProcess() {
+            isRunning = false;
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            log("已停止获取订单数据", "info");
+        }
+        
+        // 事件监听
+        startBtn.addEventListener('click', startProcess);
+        stopBtn.addEventListener('click', stopProcess);
+        
+        // 页面加载完成
+        window.addEventListener('load', () => {
+            log("页面已加载，点击"开始获取订单数据"按钮开始处理", "info");
+        });
+    </script>
+</body>
+</html>
