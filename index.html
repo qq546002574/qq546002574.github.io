@@ -113,12 +113,7 @@
               "..."
           );
 
-          // 检查响应code是否为200
-          if (responseData.code === 200) {
-            log("响应code为200，5秒后重新执行请求...", "info");
-            setTimeout(getOrderData, 5000);
-            return;
-          }
+          
 
           // 获取data字段中的数组
           if (responseData.data) {
@@ -127,7 +122,7 @@
             // 判断data是否为空数组
             if (Array.isArray(data) && data.length === 0) {
               log("data为空数组，10秒后重新执行请求...", "info");
-              setTimeout(getOrderData, 10000);
+              setTimeout(getOrderData, 5000);
               return;
             }
 
